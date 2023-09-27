@@ -107,7 +107,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4533943726500818}
-  - component: {fileID: 96533119924556368}
   m_Layer: 0
   m_Name: Street 3 Prefab
   m_TagString: Untagged
@@ -131,30 +130,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &96533119924556368
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573730805894322}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.09999999, z: 0}
-  m_Size: 2
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2300000, guid: 72e65272e9752d842a914dd27fd86306, type: 3}
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2300000, guid: 72e65272e9752d842a914dd27fd86306, type: 3}
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2300000, guid: 72e65272e9752d842a914dd27fd86306, type: 3}
-  m_Enabled: 1
