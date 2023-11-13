@@ -11,15 +11,10 @@ public class ManagerScen : MonoBehaviour
     void Start()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex != 0)
+        /*if (currentSceneIndex != 0)
         {
             canvas.gameObject.SetActive(false);
-        }
-    }
-
-    void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("CanvasVisible");
+        }*/
     }
 
     // Update is called once per frame
@@ -38,6 +33,11 @@ public class ManagerScen : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (FindObjectOfType<ManagerScen>() == null)
+            DontDestroyOnLoad(this.gameObject);
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

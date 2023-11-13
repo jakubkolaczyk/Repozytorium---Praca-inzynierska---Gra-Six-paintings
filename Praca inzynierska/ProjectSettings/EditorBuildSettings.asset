@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Biuro.unity
     guid: 258a1f9c0d761744f94d5f2ae3232097
+  - enabled: 1
+    path: "Assets/Scenes/Ekran\u0141adowania.unity"
+    guid: 71d067c4d19678a46bd96f1b6d33cf7e
   m_configObjects: {}

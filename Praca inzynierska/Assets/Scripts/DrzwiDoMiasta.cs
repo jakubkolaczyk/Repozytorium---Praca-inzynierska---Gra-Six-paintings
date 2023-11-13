@@ -29,7 +29,7 @@ public class DrzwiDoMiasta : MonoBehaviour
     {
         if (interactText.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
     }
 }
