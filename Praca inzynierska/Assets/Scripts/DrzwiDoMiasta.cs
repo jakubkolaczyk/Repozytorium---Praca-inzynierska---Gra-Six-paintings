@@ -9,6 +9,10 @@ public class DrzwiDoMiasta : MonoBehaviour
 {
     public TextMeshProUGUI interactText;
 
+    private void Start()
+    {
+        interactText.gameObject.SetActive(false);
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

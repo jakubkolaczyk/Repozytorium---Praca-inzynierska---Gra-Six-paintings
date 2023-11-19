@@ -1018,24 +1018,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e147ee9e6d28d4caab59c6ecee10a8, type: 3}
---- !u!1 &1083568596 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8213118422679109942, guid: 4c22f4d98fd2af64b82d8e80d223de2e, type: 3}
-  m_PrefabInstance: {fileID: 8213118421615030498}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1083568601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083568596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072a461df8fa0394096937d86cff9cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactText: {fileID: 946674519}
 --- !u!1 &1092148791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,17 +2464,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1083568601, guid: 4c22f4d98fd2af64b82d8e80d223de2e, type: 3}
+      propertyPath: interactText
+      value: 
+      objectReference: {fileID: 946674519}
     - target: {fileID: 8213118422679109942, guid: 4c22f4d98fd2af64b82d8e80d223de2e, type: 3}
       propertyPath: m_Name
       value: Drzwi
-      objectReference: {fileID: 0}
-    - target: {fileID: 8213118422679109942, guid: 4c22f4d98fd2af64b82d8e80d223de2e, type: 3}
-      propertyPath: m_TagString
-      value: Drzwi
-      objectReference: {fileID: 0}
-    - target: {fileID: 8213118422679109943, guid: 4c22f4d98fd2af64b82d8e80d223de2e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8213118422679109946, guid: 4c22f4d98fd2af64b82d8e80d223de2e, type: 3}
       propertyPath: m_RootOrder
