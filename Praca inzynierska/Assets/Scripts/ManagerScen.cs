@@ -6,38 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class ManagerScen : MonoBehaviour
 {
-    public GameObject canvas;
-
-    void Start()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        /*if (currentSceneIndex != 0)
-        {
-            canvas.gameObject.SetActive(false);
-        }*/
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex != 0)
-        {
-            if (Input.GetKey(KeyCode.Escape)) 
-            { 
-                SceneManager.LoadScene(0);
-                Cursor.lockState = CursorLockMode.None;
-            }
+         if (currentSceneIndex == 0) 
+        { 
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
     void Awake()
     {
-        if (FindObjectOfType<ManagerScen>() == null)
-            DontDestroyOnLoad(this.gameObject);
+        int sceneManagerObjectsCount = FindObjectsOfType<ManagerScen>().Length;
+
+        if (sceneManagerObjectsCount > 1)
+        {
+            Destroy(gameObject);
+        }
         else
         {
-            Destroy(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
     }
+
+
 }
