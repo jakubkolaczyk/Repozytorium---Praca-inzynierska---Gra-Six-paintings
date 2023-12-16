@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Drzwi
+  - Ground
   layers:
   - Default
   - TransparentFX
