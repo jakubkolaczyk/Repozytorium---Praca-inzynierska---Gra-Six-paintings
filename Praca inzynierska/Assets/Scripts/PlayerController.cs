@@ -39,24 +39,20 @@ public class PlayerController : MonoBehaviour
         Zoom();
 
         //Kamera
-        // plynne obroty
-        Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
-        frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / smoothing);
-        velocity += frameVelocity;
-        velocity.y = Mathf.Clamp(velocity.y, -90, 90);
+        if (PauseMenuManager.isPaused==false)
+        {
+            // plynne obroty
+            Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
+            frameVelocity = Vector2.Lerp(frameVelocity, rawFrameVelocity, 1 / smoothing);
+            velocity += frameVelocity;
+            velocity.y = Mathf.Clamp(velocity.y, -90, 90);
 
-        if (PauseMenuManager.isPaused)
-        {
-            transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.zero);
-            character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.zero);
-        }
-        else
-        {
             // obroty kamery gra d i prawo lewo
             playerCamera.transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
             transform.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
         }
+        
     }
     
 

@@ -8,6 +8,7 @@ using TMPro;
 public class DrzwiDoBiura : MonoBehaviour
 { 
     public TextMeshProUGUI interactText;
+    bool biuro;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class DrzwiDoBiura : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactText.gameObject.SetActive(true);
+            biuro = true;
         }
     }
 
@@ -26,12 +28,13 @@ public class DrzwiDoBiura : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactText.gameObject.SetActive(false);
+            biuro = false;
         }
     }
 
     void Update()
     {
-        if (interactText.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Return))
+        if (interactText.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Return) && biuro)
         {
             SceneManager.LoadScene(2);
         }
