@@ -7,7 +7,34 @@ public class PauseMenuManager : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject letter1;
+    public GameObject letter2;
+    public GameObject letter3;
 
+    private void Start()
+    {
+        if (ManagerScen.questStatus==0 && SceneManager.GetActiveScene().buildIndex==2)
+        {
+            letter1.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (ManagerScen.questStatus==4 && SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            letter2.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (ManagerScen.questStatus == 12 && SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            letter3.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -42,5 +69,30 @@ public class PauseMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+    }
+
+    public void AcceptLetter1()
+    {
+        letter1.SetActive(false);
+        ManagerScen.questStatus = 1;
+        isPaused = false;
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void AcceptLetter2()
+    {
+        letter2.SetActive(false);
+        ManagerScen.questStatus = 5;
+        isPaused = false;
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void AcceptLetter3()
+    {
+        letter3.SetActive(false);
+        ManagerScen.questStatus = 13;
+        isPaused = false;
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

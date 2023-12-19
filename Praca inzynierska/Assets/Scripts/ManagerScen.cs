@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class ManagerScen : MonoBehaviour
 {
-   
+    public static bool isSaved = false;
+    public static int questStatus = 0;
     // Update is called once per frame
     void Update()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
          if (currentSceneIndex == 0) 
-        { 
+         { 
             Cursor.lockState = CursorLockMode.None;
-        }
+         }
     }
 
     void Awake()
@@ -31,5 +32,5 @@ public class ManagerScen : MonoBehaviour
         }
     }
 
-
+    
 }

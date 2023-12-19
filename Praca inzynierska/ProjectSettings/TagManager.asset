@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Drzwi
   - Ground
+  - FabCharacter
+  - Policeman
   layers:
   - Default
   - TransparentFX

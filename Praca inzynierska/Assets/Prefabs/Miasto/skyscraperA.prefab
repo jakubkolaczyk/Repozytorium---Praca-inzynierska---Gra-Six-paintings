@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 6991417333353124297}
   - component: {fileID: 3730737101988075004}
   - component: {fileID: 1658778335295400683}
+  - component: {fileID: 8192154170838047222}
   m_Layer: 0
   m_Name: skyscraperA
   m_TagString: Untagged
@@ -385,7 +386,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9073793442019073172}
-  m_LocalRotation: {x: -0.00000003774895, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -420.55115, y: 0.000008082382, z: -433.9298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -530,7 +531,7 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4246937
+  - screenRelativeHeight: 0.3708659
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5394861313382914691}
@@ -557,6 +558,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalRenderers:
   - {fileID: 7416420880827252033}
+--- !u!65 &8192154170838047222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073793442019073172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.4, y: 28.800001, z: 12.4}
+  m_Center: {x: 0, y: 14.400001, z: 0}
 --- !u!1 &9136805264963135658
 GameObject:
   m_ObjectHideFlags: 0

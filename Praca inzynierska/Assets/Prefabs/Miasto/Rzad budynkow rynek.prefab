@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 1114376884490058959}
   - component: {fileID: 8830990932775715068}
   - component: {fileID: 5581122729727878440}
+  - component: {fileID: 2827405116937936664}
   m_Layer: 0
   m_Name: Rzad budynkow rynek
   m_TagString: Untagged
@@ -821,6 +822,19 @@ MonoBehaviour:
   - {fileID: 2428246619291494889}
   - {fileID: 1847877477447540826}
   - {fileID: 2219905367244477727}
+--- !u!65 &2827405116937936664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8506959729626118174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.28999, y: 7.2230673, z: 7.912842}
+  m_Center: {x: -8.381168, y: 3.3564491, z: -202.33612}
 --- !u!1001 &652781747023743387
 PrefabInstance:
   m_ObjectHideFlags: 0

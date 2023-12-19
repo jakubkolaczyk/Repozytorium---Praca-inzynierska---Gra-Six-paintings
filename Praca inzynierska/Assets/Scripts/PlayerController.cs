@@ -1,21 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float sprintSpeed = 10f;
+    public float moveSpeed = 4f;
+    public float sprintSpeed = 7f;
     public float rotationSpeed = 2f;
-    public float jumpForce = 5f;
     public float zoomSpeed = 5f;
     public float zoomFOV = 40f;
     public float normalFOV = 60f;
 
     public Camera playerCamera;
-    private bool isGrounded;
     private bool isSprinting;
-    private bool isZoomed;
     [SerializeField]
     Transform character;
     private float sensitivity = 2;
@@ -23,17 +22,33 @@ public class PlayerController : MonoBehaviour
 
     Vector2 velocity;
     Vector2 frameVelocity;
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        if (SceneManager.GetActiveScene().buildIndex == 1 && ManagerScen.isSaved)
+        {
+            float playerPosX = PlayerPrefs.GetFloat("PlayerPosX");
+            float playerPosY = PlayerPrefs.GetFloat("PlayerPosY");
+            float playerPosZ = PlayerPrefs.GetFloat("PlayerPosZ");
+
+            Vector3 playerPosition = new Vector3(playerPosX, playerPosY, playerPosZ);
+            transform.position = playerPosition;
+            ManagerScen.isSaved = false;
+        }
+        if (PauseMenuManager.isPaused==false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        
     }
     void Update()
     {
         // Poruszanie się gracza
         MovePlayer();
-
-        // Skok
-        Jump();
 
         // Zoom kamery
         Zoom();
@@ -111,33 +126,16 @@ public class PlayerController : MonoBehaviour
         }        
     }
 
-    void Jump()
-    {
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
-    }
-
     void Zoom()
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            isZoomed = true;
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, Time.deltaTime * zoomSpeed);
         }
         else
         {
-            isZoomed = false;
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, normalFOV, Time.deltaTime * zoomSpeed);
         }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-            isGrounded = true;
     }
 }
 
