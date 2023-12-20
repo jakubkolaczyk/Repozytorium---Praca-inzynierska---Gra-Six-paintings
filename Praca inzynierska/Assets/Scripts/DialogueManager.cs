@@ -45,6 +45,14 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        if (ManagerScen.questStatus == 1 || ManagerScen.questStatus == 5 || ManagerScen.questStatus == 7 || ManagerScen.questStatus == 9 || ManagerScen.questStatus == 10 || ManagerScen.questStatus == 13)
+        {
+            fabCharacter = GameObject.FindGameObjectWithTag("Policeman");
+        }
+        else
+        {
+            fabCharacter = GameObject.FindGameObjectWithTag("FabCharacter");
+        }
         diff = Vector3.Distance(player.transform.position, fabCharacter.transform.position);        
         if(diff < 2f)
         {

@@ -149,6 +149,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &57257899
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57257897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.36716416
+  m_Height: 1.8457108
+  m_Direction: 1
+  m_Center: {x: 0.009712695, y: 0.8989248, z: -1.2047788e-10}
 --- !u!1001 &202592818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,6 +485,14 @@ PrefabInstance:
     - target: {fileID: 5240908193377753500, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669993446026081250, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 999494347}
+    - target: {fileID: 8669993446026081250, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SavePlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
@@ -1029,6 +1051,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4c775de486421408b039c178861dbc, type: 3}
+--- !u!114 &999494347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3084337813487692428, guid: 8f4c775de486421408b039c178861dbc, type: 3}
+  m_PrefabInstance: {fileID: 999494346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622283020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc0fa1f14581f34cb5cda7f3c0fe8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1062802319
 PrefabInstance:
   m_ObjectHideFlags: 0

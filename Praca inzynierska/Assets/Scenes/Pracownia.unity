@@ -1101,6 +1101,10 @@ PrefabInstance:
         photo found near the crime scene. I can provide you with the details of this
         artist, hoping it aids your investigation.
       objectReference: {fileID: 0}
+    - target: {fileID: 1694222268, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
+      propertyPath: m_text
+      value: Manager Jorge
+      objectReference: {fileID: 0}
     - target: {fileID: 2420711787781348019, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
       propertyPath: m_Interactable
       value: 1
@@ -2960,6 +2964,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &1397356542
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397356540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.36716416
+  m_Height: 1.8457108
+  m_Direction: 1
+  m_Center: {x: 0.009712695, y: 0.8989248, z: -1.2047788e-10}
 --- !u!1001 &1445191643
 PrefabInstance:
   m_ObjectHideFlags: 0

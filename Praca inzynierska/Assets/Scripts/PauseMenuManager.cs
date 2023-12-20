@@ -69,6 +69,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void AcceptLetter1()

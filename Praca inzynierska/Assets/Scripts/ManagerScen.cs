@@ -8,6 +8,9 @@ public class ManagerScen : MonoBehaviour
 {
     public static bool isSaved = false;
     public static int questStatus = 0;
+    public static bool isLoaded;
+    public static float[] playerPos;
+    
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +24,7 @@ public class ManagerScen : MonoBehaviour
     void Awake()
     {
         int sceneManagerObjectsCount = FindObjectsOfType<ManagerScen>().Length;
-
+        playerPos = new float[3];
         if (sceneManagerObjectsCount > 1)
         {
             Destroy(gameObject);

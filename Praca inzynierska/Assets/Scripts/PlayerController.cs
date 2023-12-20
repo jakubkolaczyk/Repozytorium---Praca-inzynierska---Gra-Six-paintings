@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     Vector2 velocity;
     Vector2 frameVelocity;
 
+    public int sceneIndex;
+
     void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1 && ManagerScen.isSaved)
@@ -42,6 +44,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (ManagerScen.isLoaded) 
+        {
+            Vector3 position;
+            position.x = ManagerScen.playerPos[0];
+            position.y = ManagerScen.playerPos[1];
+            position.z = ManagerScen.playerPos[2];
+            ManagerScen.isLoaded = false;
         }
         
     }
@@ -67,6 +78,7 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
             transform.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
         }
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
         
     }
     
@@ -136,6 +148,26 @@ public class PlayerController : MonoBehaviour
         {
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, normalFOV, Time.deltaTime * zoomSpeed);
         }
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SaveData(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadData(this);
+
+        ManagerScen.questStatus = data.questSave;
+        int scene = data.sceneSave;
+        ManagerScen.isLoaded = true;
+        ManagerScen.playerPos[0] = data.playerPosisionSave[0];
+        ManagerScen.playerPos[1] = data.playerPosisionSave[1];
+        ManagerScen.playerPos[2] = data.playerPosisionSave[2];
+        SceneManager.LoadScene(scene);
+
+        
     }
 }
 
