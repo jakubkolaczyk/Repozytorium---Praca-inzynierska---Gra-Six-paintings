@@ -8,8 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject Buttons;
+    public GameObject Controls;
+    public GameObject Credits;
     public void StartGame()
     {
+        ManagerScen.questStatus = -1;
         SceneManager.LoadScene(2);
     }
 
@@ -20,5 +24,29 @@ public class MainMenuManager : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void ShowControls()
+    {
+        Buttons.SetActive(false);
+        Controls.SetActive(true);
+    }
+
+    public void ShowCredits()
+    {
+        Buttons.SetActive(false);
+        Credits.SetActive(true);
+    }
+
+    public void HideControls()
+    {
+        Buttons.SetActive(true);
+        Controls.SetActive(false);
+    }
+
+    public void HideCredits()
+    {
+        Buttons.SetActive(true);
+        Credits.SetActive(false);
     }
 }

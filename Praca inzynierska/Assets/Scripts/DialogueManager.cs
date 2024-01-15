@@ -31,16 +31,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         dialogueBox.SetActive(false);
-        Debug.Log(ManagerScen.questStatus);
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (ManagerScen.questStatus==1 || ManagerScen.questStatus==5 || ManagerScen.questStatus==7 || ManagerScen.questStatus==9 || ManagerScen.questStatus==10 || ManagerScen.questStatus==13) 
-        {
-            fabCharacter = GameObject.FindGameObjectWithTag("Policeman");
-        }
-        else
-        {
-            fabCharacter = GameObject.FindGameObjectWithTag("FabCharacter");
-        }        
+        player = GameObject.FindGameObjectWithTag("Player");       
     }
 
     void Update()
@@ -85,392 +76,130 @@ public class DialogueManager : MonoBehaviour
     {
         if (ManagerScen.questStatus==1 && sceneIndex == 8)
         {
-            if (currentDialogueIndex < dialoguePoliceman1.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialoguePoliceman1);
         }
         if (ManagerScen.questStatus == 2 && sceneIndex == 5)
         {
-            if (currentDialogueIndex < dialogueShopkeeper.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialogueShopkeeper);
         }
         if (ManagerScen.questStatus == 3 && sceneIndex == 4)
-        {
-            if (currentDialogueIndex < dialogueDoctor.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+        {          
+            DisplayDialogue(dialogueDoctor);
         }
         if (ManagerScen.questStatus == 5 && sceneIndex == 8)
         {
-            if (currentDialogueIndex < dialoguePoliceman2.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialoguePoliceman2);
         }
         if (ManagerScen.questStatus == 6 && sceneIndex == 7)
         {
-            if (currentDialogueIndex < dialogueGarden.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialogueGarden);
         }
         if (ManagerScen.questStatus == 7 && sceneIndex == 7)
         {
-            if (currentDialogueIndex < dialogueGarden2.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialogueGarden2);
         }
         if (ManagerScen.questStatus == 8 && sceneIndex == 6)
         {
-            if (currentDialogueIndex < dialogueWorkshop.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialogueWorkshop);
         }
         if (ManagerScen.questStatus == 9 && sceneIndex == 8)
         {
-            if (currentDialogueIndex < dialoguePoliceman3.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialoguePoliceman3);
         }
         if (ManagerScen.questStatus == 10 && sceneIndex == 1)
         {
-            if (currentDialogueIndex < dialogueTown.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialogueTown);
         }
         if (ManagerScen.questStatus == 11 && sceneIndex == 1)
         {
-            if (currentDialogueIndex < dialogueTown2.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+            DisplayDialogue(dialogueTown2);
         }
         if (ManagerScen.questStatus == 13 && sceneIndex == 8)
-        {
-            if (currentDialogueIndex < dialoguePoliceman4.Length)
-            {
-                dialogueBox.SetActive(true);
-                dialogueText.text = "";
-                isDisplayingText = true;
-                PauseMenuManager.isPaused = true;
-                Time.timeScale = 0f;
-                ShowNextSentence();
-            }
-            else
-            {
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                dialogueBox.SetActive(false);
-            }
+        {            
+            DisplayDialogue(dialoguePoliceman4);
         }
     }
 
     void ShowNextSentence()
     {
         if (ManagerScen.questStatus == 1 && sceneIndex == 8)
-        {
-            if (currentDialogueIndex < dialoguePoliceman1.Length)
-            {
-                dialogueText.text = dialoguePoliceman1[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 2;
-                dialogueBox.SetActive(false);
-            }
+        {            
+            DisplaySentence(dialoguePoliceman1, 2);
         }
         if (ManagerScen.questStatus == 2 && sceneIndex == 5)
         {
-            if (currentDialogueIndex < dialogueShopkeeper.Length)
-            {
-                dialogueText.text = dialogueShopkeeper[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 3;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueShopkeeper, 3);
         }
         if (ManagerScen.questStatus == 3 && sceneIndex == 4)
         {
-            if (currentDialogueIndex < dialogueDoctor.Length)
-            {
-                dialogueText.text = dialogueDoctor[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 4;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueDoctor, 4);
         }
         if (ManagerScen.questStatus == 5 && sceneIndex == 8)
         {
-            if (currentDialogueIndex < dialoguePoliceman2.Length)
-            {
-                dialogueText.text = dialoguePoliceman2[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 6;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialoguePoliceman2, 6);
         }
         if (ManagerScen.questStatus == 6 && sceneIndex == 7)
         {
-            if (currentDialogueIndex < dialogueGarden.Length)
-            {
-                dialogueText.text = dialogueGarden[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 7;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueGarden, 7);
         }
         if (ManagerScen.questStatus == 7 && sceneIndex == 7)
         {
-            if (currentDialogueIndex < dialogueGarden2.Length)
-            {
-                dialogueText.text = dialogueGarden2[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 8;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueGarden2, 8);
         }
         if (ManagerScen.questStatus == 8 && sceneIndex == 6)
         {
-            if (currentDialogueIndex < dialogueWorkshop.Length)
-            {
-                dialogueText.text = dialogueWorkshop[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 9;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueWorkshop, 9);
         }
         if (ManagerScen.questStatus == 9 && sceneIndex == 8)
         {
-            if (currentDialogueIndex < dialoguePoliceman3.Length)
-            {
-                dialogueText.text = dialoguePoliceman3[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 10;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialoguePoliceman3, 10);
         }
         if (ManagerScen.questStatus == 10 && sceneIndex == 1)
         {
-            if (currentDialogueIndex < dialogueTown.Length)
-            {
-                dialogueText.text = dialogueTown[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 11;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueTown, 11);
         }
         if (ManagerScen.questStatus == 11 && sceneIndex == 1)
         {
-            if (currentDialogueIndex < dialogueTown2.Length)
-            {
-                dialogueText.text = dialogueTown2[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 12;
-                dialogueBox.SetActive(false);
-            }
+            DisplaySentence(dialogueTown2, 12);
         }
         if (ManagerScen.questStatus == 13 && sceneIndex == 8)
+        {            
+            DisplaySentence(dialoguePoliceman4, 14);
+        }
+    }
+    public void DisplayDialogue(string[] dialogue)
+    {
+        if (currentDialogueIndex < dialogue.Length)
         {
-            if (currentDialogueIndex < dialoguePoliceman4.Length)
-            {
-                dialogueText.text = dialoguePoliceman4[currentDialogueIndex];
-                currentDialogueIndex++;
-            }
-            else
-            {
-                isDisplayingText = false;
-                PauseMenuManager.isPaused = false;
-                Time.timeScale = 1f;
-                currentDialogueIndex = 0;
-                ManagerScen.questStatus = 14;
-                dialogueBox.SetActive(false);
-            }
+            dialogueBox.SetActive(true);
+            dialogueText.text = "";
+            isDisplayingText = true;
+            PauseMenuManager.isPaused = true;
+            Time.timeScale = 0f;
+            ShowNextSentence();
+        }
+        else
+        {
+            PauseMenuManager.isPaused = false;
+            Time.timeScale = 1f;
+            dialogueBox.SetActive(false);
+        }
+    }
+    public void DisplaySentence(string[] dialogue, int quest)
+    {
+        if (currentDialogueIndex < dialogue.Length)
+        {
+            dialogueText.text = dialogue[currentDialogueIndex];
+            currentDialogueIndex++;
+        }
+        else
+        {
+            isDisplayingText = false;
+            PauseMenuManager.isPaused = false;
+            Time.timeScale = 1f;
+            currentDialogueIndex = 0;
+            ManagerScen.questStatus = quest;
+            dialogueBox.SetActive(false);
         }
     }
 }

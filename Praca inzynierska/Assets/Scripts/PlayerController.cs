@@ -46,14 +46,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        if (ManagerScen.isLoaded) 
-        {
-            Vector3 position;
-            position.x = ManagerScen.playerPos[0];
-            position.y = ManagerScen.playerPos[1];
-            position.z = ManagerScen.playerPos[2];
-            ManagerScen.isLoaded = false;
-        }
+        
         
     }
     void Update()
@@ -86,56 +79,35 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         isSprinting = Input.GetKey(KeyCode.LeftShift);
+        float speed;
         if(isSprinting)
         {
-            if (Input.GetKey("w"))
-            {
-                transform.Translate(Vector3.forward * sprintSpeed * Time.deltaTime);
-            }
-
-            // Poruszanie się do tyłu
-            if (Input.GetKey("s"))
-            {
-                transform.Translate(Vector3.back * sprintSpeed * Time.deltaTime);
-            }
-
-            // Poruszanie się w lewo
-            if (Input.GetKey("a"))
-            {
-                transform.Translate(Vector3.left * sprintSpeed * Time.deltaTime);
-            }
-
-            // Poruszanie się w prawo
-            if (Input.GetKey("d"))
-            {
-                transform.Translate(Vector3.right * sprintSpeed * Time.deltaTime);
-            }
+            speed = sprintSpeed;            
         }
         else
         {
-            if (Input.GetKey("w"))
-            {
-                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            }
+            speed = moveSpeed;            
+        }
 
-            // Poruszanie się do tyłu
-            if (Input.GetKey("s"))
-            {
-                transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
-            }
+        if (Input.GetKey("w"))
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
 
-            // Poruszanie się w lewo
-            if (Input.GetKey("a"))
-            {
-                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-            }
+        if (Input.GetKey("s"))
+        {
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
+        }
 
-            // Poruszanie się w prawo
-            if (Input.GetKey("d"))
-            {
-                transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-            }
-        }        
+        if (Input.GetKey("a"))
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKey("d"))
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
     }
 
     void Zoom()
@@ -161,13 +133,7 @@ public class PlayerController : MonoBehaviour
 
         ManagerScen.questStatus = data.questSave;
         int scene = data.sceneSave;
-        ManagerScen.isLoaded = true;
-        ManagerScen.playerPos[0] = data.playerPosisionSave[0];
-        ManagerScen.playerPos[1] = data.playerPosisionSave[1];
-        ManagerScen.playerPos[2] = data.playerPosisionSave[2];
-        SceneManager.LoadScene(scene);
-
-        
+        SceneManager.LoadScene(scene);        
     }
 }
 

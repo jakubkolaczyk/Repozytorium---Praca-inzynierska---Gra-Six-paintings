@@ -5810,6 +5810,10 @@ PrefabInstance:
       value: Your contribution to this case goes beyond solving crimes, it's about
         fostering a sense of security for those we serve.
       objectReference: {fileID: 0}
+    - target: {fileID: 1296334776057672226, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5240908193377753472, guid: eea90c3cae731c14ea1fc8a1d4a4dd43, type: 3}
       propertyPath: m_Name
       value: NormalSceneUI

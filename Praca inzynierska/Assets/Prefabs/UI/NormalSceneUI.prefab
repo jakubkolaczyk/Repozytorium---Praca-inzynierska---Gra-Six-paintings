@@ -989,10 +989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   - Meet policeman Jack at the police station
   - Talk to the shopkeeper at the art store
   - Visit the doctor in his house
-  - Go back to your office and wait for more info
+  - Go back to your office and open the letter
   - Meet policeman Jack at the police station
   - Go to the crime scene in the residential area
   - Talk to the policeman Jack
@@ -1089,8 +1089,9 @@ MonoBehaviour:
   - Meet policeman Jack at the police station
   - Head to the old town and meet policeman Jack
   - Find the criminal
-  - Go back to your office and get some rest
+  - Go back to your office and open the letter
   - Meet policeman Jack at the police station
+  - Open the letter from policeman Jack
   taskText: {fileID: 164749498}
 --- !u!1 &9019821040441994576
 GameObject:

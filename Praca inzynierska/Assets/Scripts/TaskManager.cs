@@ -61,5 +61,9 @@ public class TaskManager : MonoBehaviour
         {
             taskText.text = tasks[12];
         }
+        else if (ManagerScen.questStatus == 0)
+        {
+            taskText.text = tasks[13];
+        }
     }
 }
