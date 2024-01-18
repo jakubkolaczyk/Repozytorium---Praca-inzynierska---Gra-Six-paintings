@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     private bool isDisplayingText = false;
     float diff;
     int sceneIndex;
+    public TextMeshProUGUI dialogueName;
     void Start()
     {
         dialogueBox.SetActive(false);
@@ -44,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         {
             fabCharacter = GameObject.FindGameObjectWithTag("FabCharacter");
         }
+
         diff = Vector3.Distance(player.transform.position, fabCharacter.transform.position);        
         if(diff < 2f)
         {
@@ -64,11 +66,22 @@ public class DialogueManager : MonoBehaviour
         {
             enterDialogText.gameObject.SetActive(false);
         }
+
         if (isDisplayingText)
         {
             enterDialogText.gameObject.SetActive(false);
         }
+
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (ManagerScen.questStatus == 7)
+        {
+            dialogueName.text = "Policeman Jack";
+        }
+        else if (ManagerScen.questStatus == 11)
+        {
+            dialogueName.text = "Criminal";
+        }
     }
 
 
