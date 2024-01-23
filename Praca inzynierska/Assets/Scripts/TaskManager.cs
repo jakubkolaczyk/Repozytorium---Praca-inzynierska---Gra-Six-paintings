@@ -17,6 +17,7 @@ public class TaskManager : MonoBehaviour
         {
             taskText.text = tasks[1];
         }
+
         else if (ManagerScen.questStatus == 3)
         {
             taskText.text = tasks[2];

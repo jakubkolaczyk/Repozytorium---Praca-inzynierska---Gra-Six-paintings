@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
             transform.position = playerPosition;
             ManagerScen.isSaved = false;
         }
+
         if (PauseMenuManager.isPaused==false)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -81,33 +82,21 @@ public class PlayerController : MonoBehaviour
         isSprinting = Input.GetKey(KeyCode.LeftShift);
         float speed;
         if(isSprinting)
-        {
-            speed = sprintSpeed;            
-        }
+        {speed = sprintSpeed;}
         else
-        {
-            speed = moveSpeed;            
-        }
+        {speed = moveSpeed;}
 
         if (Input.GetKey("w"))
-        {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
+        {transform.Translate(Vector3.forward * speed * Time.deltaTime);}
 
         if (Input.GetKey("s"))
-        {
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
-        }
+        {transform.Translate(Vector3.back * speed * Time.deltaTime);}
 
         if (Input.GetKey("a"))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
+        {transform.Translate(Vector3.left * speed * Time.deltaTime);}
 
         if (Input.GetKey("d"))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
+        {transform.Translate(Vector3.right * speed * Time.deltaTime);}
     }
 
     void Zoom()

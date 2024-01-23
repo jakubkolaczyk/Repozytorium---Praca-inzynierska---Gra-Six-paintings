@@ -37,7 +37,8 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (ManagerScen.questStatus == 1 || ManagerScen.questStatus == 5 || ManagerScen.questStatus == 7 || ManagerScen.questStatus == 9 || ManagerScen.questStatus == 10 || ManagerScen.questStatus == 13)
+        if (ManagerScen.questStatus == 1 || ManagerScen.questStatus == 5 || ManagerScen.questStatus == 7 
+            || ManagerScen.questStatus == 9 || ManagerScen.questStatus == 10 || ManagerScen.questStatus == 13)
         {
             fabCharacter = GameObject.FindGameObjectWithTag("Policeman");
         }
@@ -91,6 +92,7 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayDialogue(dialoguePoliceman1);
         }
+
         if (ManagerScen.questStatus == 2 && sceneIndex == 5)
         {
             DisplayDialogue(dialogueShopkeeper);
@@ -139,6 +141,7 @@ public class DialogueManager : MonoBehaviour
         {            
             DisplaySentence(dialoguePoliceman1, 2);
         }
+
         if (ManagerScen.questStatus == 2 && sceneIndex == 5)
         {
             DisplaySentence(dialogueShopkeeper, 3);

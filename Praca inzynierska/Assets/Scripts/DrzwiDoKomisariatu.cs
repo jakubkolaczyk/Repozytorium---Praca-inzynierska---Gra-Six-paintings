@@ -21,7 +21,6 @@ public class DrzwiDoKomisariatu : MonoBehaviour
             komisariat = true;
         }
     }
-
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
